@@ -9,85 +9,68 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-background:url('background.jpg') no-repeat center/cover;
-color:#fff;
+background:#000;
+color:white;
 }
 
-/* GLASS EFFECT */
-.glass{
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-border-radius:20px;
-padding:30px;
-margin:20px;
-box-shadow:0 0 30px rgba(255,215,0,0.2);
-}
-
-/* HEADER */
-header{
-text-align:center;
-padding:60px 20px;
-}
-
-h1{
-font-size:42px;
-color:gold;
-}
-
-.tagline{
-margin-top:10px;
-opacity:0.8;
+/* HERO */
+.hero img{
+width:100%;
+height:500px;
+object-fit:cover;
 }
 
 /* BUTTONS */
 .btn{
 display:inline-block;
-margin:10px;
 padding:12px 25px;
+margin:10px;
 border-radius:30px;
 text-decoration:none;
-font-weight:600;
+font-weight:bold;
+}
+
+.whatsapp{background:#25D366;color:white;}
+.map{background:gold;color:black;}
+
+.center{text-align:center;margin:20px;}
+
+/* GLASS CARD */
+.section{max-width:1100px;margin:auto;padding:40px 20px;}
+
+.card{
+background:rgba(0,0,0,0.7);
+border-radius:20px;
+padding:25px;
+margin:20px 0;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(255,215,0,0.3);
 transition:0.3s;
 }
 
-.whatsapp{
-background:#25D366;
-color:#fff;
+.card:hover{
+transform:scale(1.03);
+box-shadow:0 0 30px gold;
 }
 
-.map{
-background:gold;
-color:#000;
+h2{color:gold;margin-bottom:10px;}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
 }
 
-.btn:hover{
-transform:scale(1.1);
+.gallery img{
+width:100%;
+border-radius:15px;
 }
 
-/* SERVICES */
-.section{
-max-width:900px;
-margin:auto;
-}
-
-.section h2{
-color:gold;
-margin-bottom:10px;
-}
-
-ul{
-padding-left:20px;
-}
-
-/* FLOATING WHATSAPP */
+/* FLOAT */
 .float{
 position:fixed;
 bottom:20px;
@@ -96,28 +79,25 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-font-size:20px;
+font-size:22px;
 text-decoration:none;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-opacity:0.7;
-}
+footer{text-align:center;padding:20px;color:#aaa;}
 
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>Sonia Shahzadi</h1>
-<p class="tagline">Signature Salon & Spa</p>
+<!-- TOP IMAGE -->
+<div class="hero">
+<img src="E199AFBF-6946-44A9-946C-F6024DAB743C.jpeg">
+</div>
 
+<!-- BUTTONS -->
+<div class="center">
 <a class="btn whatsapp" href="https://wa.me/923478679725?text=Hello%20I%20want%20to%20book%20appointment" target="_blank">
 💬 Book on WhatsApp
 </a>
@@ -125,30 +105,40 @@ opacity:0.7;
 <a class="btn map" href="https://maps.google.com/?q=31.599361,74.408043" target="_blank">
 📍 Get Directions
 </a>
-</header>
-
-<div class="glass section">
-<p>
-Welcome to Sonia Shahzadi Signature Salon & Spa — your ultimate beauty destination in Lahore.
-Premium salon & spa services with home service available.
-</p>
 </div>
 
-<div class="glass section">
+<!-- ABOUT -->
+<div class="section">
+<div class="card">
+<p>
+Welcome to Sonia Shahzadi Signature Salon & Spa — your ultimate beauty destination in Lahore.
+We provide luxury bridal makeup, hair styling, spa & beauty services with home service available.
+</p>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+
+<div class="card">
 <h2>💇 Hair Services</h2>
 <ul>
 <li>Hair Cutting & Styling</li>
 <li>Hair Treatment & Spa</li>
 <li>Hair Color & Highlights</li>
 </ul>
+</div>
 
+<div class="card">
 <h2>💄 Makeup Services</h2>
 <ul>
 <li>Bridal Makeup</li>
 <li>Party Makeup</li>
 <li>Signature Makeup</li>
 </ul>
+</div>
 
+<div class="card">
 <h2>🌿 Beauty & Skin Care</h2>
 <ul>
 <li>Medicated Facial</li>
@@ -156,30 +146,57 @@ Premium salon & spa services with home service available.
 <li>Face Wax</li>
 <li>Eyebrows & Upper Lips</li>
 </ul>
+</div>
 
+<div class="card">
 <h2>💆 Relaxation</h2>
 <ul>
 <li>Full Body Massage</li>
 </ul>
 </div>
 
-<div class="glass section">
-<h2>🏠 Home Service Available</h2>
-<p>All services available at your home with prior booking</p>
 </div>
 
-<div class="glass section">
+<!-- GALLERY -->
+<div class="section">
+<h2 style="text-align:center;">✨ Our Work</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4">
+<img src="https://images.unsplash.com/photo-1594824475317-7c5b87e3e8f5">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+<div class="card">
 <h2>📞 Contact</h2>
 <p>📞 0347-8679725</p>
 <p>📧 soniashahzadi.salon@gmail.com</p>
 <p>📍 16 Number Gali, Aymun Town, Lahore</p>
+
+<a class="btn whatsapp" href="https://wa.me/923478679725" target="_blank">
+💬 WhatsApp Now
+</a>
+
+<a class="btn map" href="https://maps.google.com/?q=31.599361,74.408043" target="_blank">
+📍 Open Map
+</a>
+
+</div>
 </div>
 
 <footer>
-Quality • Hygiene • Comfort • Satisfaction
+✨ Sonia Shahzadi Signature Salon & Spa ✨
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOAT -->
 <a href="https://wa.me/923478679725" class="float" target="_blank">💬</a>
 
 </body>
