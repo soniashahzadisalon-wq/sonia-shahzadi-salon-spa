@@ -1,235 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonia Shahzadi Signature Salon & Spa</title>
+<title>Sonia Shahzadi Salon & Spa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{background:#000;color:#fff;overflow-x:hidden;}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    color: white;
+}
 
 /* NAVBAR */
-nav{
-position:fixed;
-width:100%;
-top:0;
-background:rgba(0,0,0,0.8);
-display:flex;
-justify-content:space-between;
-padding:15px 30px;
-z-index:1000;
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
 }
 
-nav h2{color:gold;}
-nav a{color:white;margin-left:15px;text-decoration:none;}
-
-/* HERO SLIDER */
-.slider{
-position:relative;
-height:100vh;
-overflow:hidden;
+header h1 {
+    color: gold;
+    font-family: 'Playfair Display';
 }
 
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-animation:slide 15s infinite;
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.slide:nth-child(1){background-image:url('E199AFBF-6946-44A9-946C-F6024DAB743C.jpeg');}
-.slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');}
-.slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348');}
-
-@keyframes slide{
-0%{opacity:1;}
-33%{opacity:0;}
-66%{opacity:0;}
-100%{opacity:1;}
+.overlay {
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
 }
 
-/* HERO TEXT */
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
+.overlay h2 {
+    font-size: 45px;
+    font-family: 'Playfair Display';
+    color: gold;
 }
 
-.hero-text h1{
-font-size:55px;
-color:gold;
+button {
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
 }
 
-.btn{
-padding:12px 25px;
-border-radius:30px;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
+/* LOGO */
+.logo {
+    text-align: center;
+    padding: 80px 20px;
 }
 
-.whatsapp{background:#25D366;color:white;}
-.map{background:gold;color:black;}
-
-/* SECTION */
-.section{padding:80px 20px;text-align:center;}
-
-h2{color:gold;margin-bottom:20px;}
+.logo img {
+    max-width: 400px;
+}
 
 /* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
+.services {
+    padding: 60px;
+    text-align: center;
 }
 
-.box{
-background:#111;
-padding:25px;
-border-radius:15px;
-transition:0.3s;
+.service-list {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+    font-size: 18px;
 }
 
-.box:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px gold;
-}
-
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:10px;
-}
-
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
+.service-list p {
+    padding: 8px 0;
 }
 
 /* CONTACT */
-.contact{
-background:#111;
-padding:40px;
+.contact {
+    padding: 60px;
+    text-align: center;
 }
 
-/* FLOAT */
-.float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
-font-size:22px;
+.contact p {
+    font-size: 18px;
 }
 
 /* FOOTER */
-footer{text-align:center;padding:20px;background:#000;}
+footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+}
 
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<h2>Sonia Shahzadi</h2>
-<div>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+<header>
+<h1>Sonia Salon</h1>
+</header>
+
+<section class="hero">
+<div class="overlay">
+<h2>Luxury Beauty Experience</h2>
+<p>Signature Salon & Spa in Lahore</p>
+<button>Book Now</button>
 </div>
-</nav>
+</section>
 
-<!-- HERO SLIDER -->
-<div class="slider">
-
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-
-<div class="hero-text">
-<h1>Sonia Shahzadi</h1>
-<p>Signature Salon & Spa</p>
-
-<a class="btn whatsapp" href="https://wa.me/923478679725" target="_blank">
-💬 Book Now
-</a>
-
-<a class="btn map" href="https://maps.google.com/?q=31.599361,74.408043" target="_blank">
-📍 Directions
-</a>
-
-</div>
-
-</div>
+<!-- LOGO -->
+<section class="logo">
+<img src="YOUR_LOGO_IMAGE_HERE">
+</section>
 
 <!-- SERVICES -->
-<div id="services" class="section">
-<h2>Our Premium Services</h2>
+<section class="services">
+<h2>Our Services</h2>
 
-<div class="services">
-<div class="box">Bridal Makeup</div>
-<div class="box">Hair Styling</div>
-<div class="box">Facial & Skin Care</div>
-<div class="box">Waxing & Threading</div>
-<div class="box">Hair Color & Highlights</div>
-<div class="box">Full Body Massage</div>
+<div class="service-list">
+<p>💇‍♀️ Hair Cutting & Styling</p>
+<p>👩 Hair Color & Highlights</p>
+<p>💆‍♀️ Hair Treatment & Spa</p>
+<p>💄 Party Makeup</p>
+<p>👰 Bridal Makeup</p>
+<p>✨ Signature Makeup</p>
+<p>🌿 Medicated Facial</p>
+<p>🧴 Full Body Massage</p>
 </div>
 
-</div>
-
-<!-- GALLERY -->
-<div id="gallery" class="section">
-<h2>Our Work</h2>
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
-<img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4">
-<img src="https://images.unsplash.com/photo-1594824475317-7c5b87e3e8f5">
-<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
-</div>
-
-</div>
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="section contact">
+<section class="contact">
 <h2>Contact Us</h2>
 
+<p>🏠 16 Number Gali, Aymun Town, Lahore</p>
 <p>📞 0347-8679725</p>
 <p>📧 soniashahzadi.salon@gmail.com</p>
-<p>📍 16 Number Gali, Aymun Town, Lahore</p>
+<p>🏡 Home Service Available</p>
 
-<br>
-
-<a class="btn whatsapp" href="https://wa.me/923478679725">WhatsApp</a>
-<a class="btn map" href="https://maps.google.com/?q=31.599361,74.408043">Map</a>
-
-</div>
+</section>
 
 <footer>
-✨ Sonia Shahzadi Signature Salon & Spa ✨
+<p>QUALITY • HYGIENE • COMFORT • SATISFACTION</p>
 </footer>
 
-<a href="https://wa.me/923478679725" class="float">💬</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/923478679725" class="whatsapp">💬</a>
 
 </body>
 </html>
