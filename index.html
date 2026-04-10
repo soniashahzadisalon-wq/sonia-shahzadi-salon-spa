@@ -3,209 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonia Shahzadi | Royal Bridal Salon</title>
+<title>Sonia Shahzadi Signature Salon & Spa</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0b0b0b;
-color:white;
-overflow-x:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#000;color:#fff;scroll-behavior:smooth;}
 
-/* NAV */
 nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:rgba(0,0,0,0.95);
-position:sticky;
-top:0;
-z-index:1000;
+display:flex;justify-content:space-between;
+padding:15px 30px;background:black;
 border-bottom:1px solid gold;
+position:sticky;top:0;z-index:1000;
 }
+nav a{color:gold;margin-left:20px;text-decoration:none;}
 
-nav h1{
-color:gold;
-letter-spacing:2px;
-}
-
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:14px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:gold;
-}
-
-/* HERO */
 .hero{
-height:95vh;
-background:url('https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg') center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1603570419986-9c9b3c7d0e6e');
+background-size:cover;
+display:flex;align-items:center;justify-content:center;
 text-align:center;
-position:relative;
 }
-
-.hero::after{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-}
-
-.hero h1{
-font-size:55px;
-color:gold;
-letter-spacing:3px;
-}
-
-.hero p{
-font-size:18px;
-color:#ddd;
-}
-
+.hero h1{font-size:55px;color:gold;text-shadow:0 0 20px gold;}
 .btn{
-margin-top:20px;
-padding:12px 30px;
-background:gold;
-border:none;
-color:black;
-font-weight:bold;
-border-radius:30px;
-cursor:pointer;
-transition:0.3s;
+margin-top:20px;padding:12px 30px;
+background:gold;color:black;border-radius:30px;text-decoration:none;
+display:inline-block;
 }
 
-.btn:hover{
-transform:scale(1.05);
-background:#e6c200;
-}
+section{padding:70px 20px;text-align:center;}
+h2{color:gold;margin-bottom:20px;}
 
-/* SERVICES */
-.section{
-padding:70px 20px;
-text-align:center;
-}
-
-.section h2{
-color:gold;
-font-size:35px;
-margin-bottom:30px;
-}
-
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.card{
-background:#1a1a1a;
-padding:25px;
-width:220px;
-border-radius:12px;
-border:1px solid rgba(255,215,0,0.3);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:gold;
-}
-
-/* GALLERY */
-.gallery{
+.services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:#111;padding:25px;border-radius:15px;
+border:1px solid gold;transition:0.3s;
+}
+.card:hover{transform:scale(1.05);box-shadow:0 0 25px gold;}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:10px;
-padding:20px;
 }
-
 .gallery img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:12px;
-transition:0.4s;
+width:100%;height:250px;object-fit:cover;border-radius:10px;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+.testimonial{
+background:#111;padding:20px;margin:10px;
+border-radius:10px;border:1px solid gold;
 }
 
-/* CONTACT */
-.contact{
-background:#111;
-padding:60px 20px;
-text-align:center;
+form{
+max-width:400px;margin:auto;
+display:flex;flex-direction:column;
+}
+form input, form select{
+margin:10px;padding:12px;border-radius:8px;border:none;
+}
+form button{
+background:gold;color:black;padding:12px;
+border:none;border-radius:25px;cursor:pointer;
 }
 
-.contact input, .contact textarea{
-width:80%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:8px;
-outline:none;
+.buttons a{
+display:inline-block;margin:10px;
+padding:12px 25px;border-radius:30px;text-decoration:none;
 }
+.call{background:gold;color:black;}
+.whatsapp{background:#25D366;color:white;}
+.map{background:#444;color:white;}
 
-.contact button{
-padding:12px 25px;
-background:gold;
-border:none;
-border-radius:25px;
-cursor:pointer;
-font-weight:bold;
+.float{
+position:fixed;right:20px;padding:15px;border-radius:50%;
+text-decoration:none;font-size:18px;
 }
+.w{bottom:80px;background:#25D366;color:white;}
+.c{bottom:20px;background:gold;color:black;}
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:55px;
-height:55px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:26px;
-color:white;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-
-/* FOOTER */
 footer{
-text-align:center;
-padding:20px;
-background:black;
-border-top:1px solid gold;
+background:black;border-top:1px solid gold;
+padding:15px;text-align:center;
 }
 </style>
 </head>
@@ -213,78 +99,55 @@ border-top:1px solid gold;
 <body>
 
 <nav>
-<h1>ROYAL SALON</h1>
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<h2 style="color:gold;">Sonia Salon</h2>
+<div>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-<h1>Sonia Shahzadi Salon</h1>
-<p>Royal Bridal • Luxury Makeup • Hair Styling</p>
-<button class="btn" onclick="book()">Book Appointment</button>
+<div class="hero">
+<div>
+<h1>Luxury Bridal Beauty 👰✨</h1>
+<p>Makeup • Hair • Spa • Home Service Available</p>
+<a href="#booking" class="btn">Book Appointment</a>
 </div>
+</div>
+
+<section>
+<h2>About Us</h2>
+<p>
+Welcome to Sonia Shahzadi Signature Salon & Spa — your ultimate beauty destination in Lahore.
+We offer premium salon and spa services including bridal makeup, hair styling, facials,
+waxing, and full body massage with home service available.
+</p>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
+<section id="services">
 <h2>Our Services</h2>
-<div class="cards">
-<div class="card">💍 Bridal Makeup</div>
-<div class="card">💇 Hair Styling</div>
-<div class="card">💆 Facial Treatment</div>
-<div class="card">✨ Skin Care</div>
-<div class="card">💅 Nail Art</div>
-<div class="card">🌸 Spa & Massage</div>
+<div class="services">
+<div class="card"><h3>Bridal Makeup</h3></div>
+<div class="card"><h3>Hair Styling</h3></div>
+<div class="card"><h3>Facials</h3></div>
+<div class="card"><h3>Wax & Threading</h3></div>
+<div class="card"><h3>Massage</h3></div>
+<div class="card"><h3>Home Service</h3></div>
 </div>
 </section>
 
-<!-- GALLERY -->
-<section class="section" id="gallery">
-<h2>Royal Bridal Gallery</h2>
+<section id="gallery">
+<h2>Our Work</h2>
 <div class="gallery">
-
-<img src="https://images.pexels.com/photos/3738347/pexels-photo-3738347.jpeg">
-<img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg">
-<img src="https://images.pexels.com/photos/3997383/pexels-photo-3997383.jpeg">
-<img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg">
-<img src="https://images.pexels.com/photos/7755655/pexels-photo-7755655.jpeg">
-<img src="https://images.pexels.com/photos/3993323/pexels-photo-3993323.jpeg">
-
+<img src="https://images.unsplash.com/photo-1603570419986-9c9b3c7d0e6e">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f">
 </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-<h2 style="color:gold;">Contact & Booking</h2>
-
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Phone Number">
-<textarea rows="4" placeholder="Message"></textarea>
-<br>
-<button onclick="book()">Send Booking</button>
-</section>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/923478679725" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Royal Bridal Salon | Sonia Shahzadi</p>
-</footer>
-
-<script>
-function book(){
-window.open("https://wa.me/923478679725","_blank");
-}
-</script>
-
-</body>
-</html>
+<section>
+<h2>Client Reviews</h2>
+<div class="testimonial">Amazing bridal makeup
