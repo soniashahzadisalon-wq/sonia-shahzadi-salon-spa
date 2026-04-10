@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Signature Salon & Spa - Sonia Shahzadi | Lahore</title>
+    <title>Sonia Shahzadi | Signature Salon & Spa - Luxury Beauty Lahore</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         * {
             margin: 0;
@@ -14,66 +15,89 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #2c2c2c;
-            background: #fff;
+            font-family: 'Montserrat', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
             overflow-x: hidden;
+            background: #0a0a0a;
         }
 
-        h1, h2, h3, h4, .logo, .section-title {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
         }
 
         .container {
-            width: 90%;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 6%;
         }
 
-        /* Top Bar - Like Canvas Salon */
-        .top-bar {
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
             background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c6a43f;
+            border-radius: 10px;
+        }
+
+        /* Top Bar Premium */
+        .top-bar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
             color: #fff;
-            padding: 10px 0;
-            font-size: 13px;
-            letter-spacing: 0.5px;
+            padding: 12px 0;
+            font-size: 12px;
+            position: relative;
+            z-index: 1001;
+            border-bottom: 1px solid rgba(198, 164, 63, 0.4);
         }
 
         .top-bar .container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .top-left span {
-            margin-right: 25px;
-        }
-
-        .top-left i, .top-right i {
+        .contact-info i {
+            color: #c6a43f;
             margin-right: 8px;
-            color: #c6a43f;
         }
 
-        .top-right a {
+        .contact-info span {
+            margin-right: 25px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .social-icons a {
             color: #fff;
-            margin-left: 18px;
+            margin-left: 20px;
             transition: 0.3s;
+            font-size: 14px;
         }
 
-        .top-right a:hover {
+        .social-icons a:hover {
             color: #c6a43f;
+            transform: translateY(-3px);
         }
 
-        /* Navbar */
+        /* Navbar Glassmorphism */
         nav {
-            background: #fff;
-            padding: 18px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(198, 164, 63, 0.2);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.05);
         }
 
         nav .container {
@@ -83,101 +107,195 @@
         }
 
         .logo h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
             letter-spacing: 1px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #c6a43f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .logo span {
+        .logo p {
+            font-size: 10px;
+            letter-spacing: 4px;
             color: #c6a43f;
+            margin-top: 3px;
+            font-weight: 500;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 40px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #1a1a1a;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c6a43f;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #c6a43f;
         }
 
-        .menu-icon {
+        .menu-toggle {
             display: none;
-            font-size: 26px;
+            font-size: 24px;
             cursor: pointer;
         }
 
-        /* Hero Banner - Full Screen Like Canvas */
+        /* Hero - Video Background Premium */
         .hero {
-            height: 90vh;
-            background: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1600');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 2;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 5%;
         }
 
-        .hero-content h2 {
-            font-size: 22px;
-            letter-spacing: 6px;
+        .hero-content h4 {
+            font-size: 18px;
+            letter-spacing: 8px;
             font-weight: 400;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
         }
 
         .hero-content h1 {
-            font-size: 72px;
-            font-weight: 800;
+            font-size: 82px;
             margin-bottom: 20px;
-            line-height: 1.2;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
             font-size: 18px;
             margin-bottom: 35px;
+            animation: fadeInUp 1s ease 0.4s both;
             font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .btn-gold {
-            background: #c6a43f;
+            background: linear-gradient(135deg, #c6a43f 0%, #e8c86a 100%);
             color: #1a1a1a;
-            padding: 14px 42px;
-            border-radius: 40px;
+            padding: 14px 48px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            letter-spacing: 2px;
+            transition: 0.4s;
             display: inline-block;
             border: none;
             cursor: pointer;
+            animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 5px 20px rgba(198,164,63,0.3);
         }
 
         .btn-gold:hover {
-            background: #a07f2a;
-            transform: translateY(-3px);
-            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(198,164,63,0.5);
+            background: linear-gradient(135deg, #e8c86a 0%, #c6a43f 100%);
         }
 
-        /* Services Section */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating Banner */
+        .floating-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #fff;
+            padding: 18px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid rgba(198,164,63,0.3);
+            border-bottom: 1px solid rgba(198,164,63,0.3);
+        }
+
+        .floating-text {
+            display: inline-block;
+            animation: floatText 20s linear infinite;
+        }
+
+        .floating-text span {
+            margin: 0 40px;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .floating-text i {
+            color: #c6a43f;
+            margin-right: 10px;
+        }
+
+        @keyframes floatText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Services Premium */
         .services {
             padding: 100px 0;
             background: #fefaf5;
@@ -185,8 +303,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 48px;
-            font-weight: 700;
+            font-size: 56px;
             margin-bottom: 15px;
         }
 
@@ -199,7 +316,7 @@
             color: #777;
             margin-bottom: 60px;
             font-size: 16px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .services-grid {
@@ -208,63 +325,147 @@
             gap: 35px;
         }
 
-        .service-item {
-            background: white;
+        .service-card {
+            background: #fff;
+            padding: 50px 30px;
             text-align: center;
-            padding: 45px 25px;
-            border-radius: 12px;
-            transition: 0.4s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border: 1px solid #f0e6d8;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(198,164,63,0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .service-item:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: #c6a43f;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #c6a43f, #e8c86a);
+            transition: 0.5s;
         }
 
-        .service-item i {
-            font-size: 52px;
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            border-color: rgba(198,164,63,0.3);
+        }
+
+        .service-card i {
+            font-size: 55px;
             color: #c6a43f;
             margin-bottom: 25px;
         }
 
-        .service-item h3 {
-            font-size: 24px;
+        .service-card h3 {
+            font-size: 26px;
             margin-bottom: 15px;
-            font-weight: 700;
         }
 
-        /* Gallery */
+        /* Gallery Slider */
         .gallery {
             padding: 100px 0;
+            background: #0a0a0a;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        .gallery .section-title, .gallery .section-sub {
+            color: #fff;
         }
 
-        .gallery-img {
-            height: 320px;
+        .gallery-slider {
+            position: relative;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: 20px;
         }
 
-        .gallery-img img {
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            height: 550px;
+            position: relative;
+        }
+
+        .slider-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.6s;
         }
 
-        .gallery-img:hover img {
-            transform: scale(1.08);
+        .slider-caption {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        /* About Section */
+        .slider-caption h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(198,164,63,0.8);
+            color: #fff;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+            font-size: 20px;
+        }
+
+        .slider-btn:hover {
+            background: #c6a43f;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #555;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #c6a43f;
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        /* About Premium */
         .about {
             padding: 100px 0;
             background: #fefaf5;
@@ -277,8 +478,8 @@
             align-items: center;
         }
 
-        .about-text h3 {
-            font-size: 38px;
+        .about-text h2 {
+            font-size: 48px;
             margin-bottom: 25px;
         }
 
@@ -288,39 +489,57 @@
             line-height: 1.8;
         }
 
-        .about-img img {
-            width: 100%;
-            border-radius: 16px;
+        .about-img {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        /* Contact */
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            transition: 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Premium */
         .contact {
             padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: #fff;
+        }
+
+        .contact .section-title, .contact .section-sub {
+            color: #fff;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
-        .contact-card {
-            background: #1a1a1a;
-            padding: 45px;
-            border-radius: 20px;
-            color: white;
+        .contact-info-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(198,164,63,0.2);
         }
 
-        .contact-card h3 {
+        .contact-info-card h3 {
             font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         .contact-detail {
             display: flex;
             align-items: center;
-            gap: 18px;
-            margin-bottom: 28px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .contact-detail i {
@@ -330,61 +549,54 @@
 
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Footer */
-        footer {
-            background: #0f0f0f;
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
             color: #aaa;
+        }
+
+        footer {
+            background: #050505;
+            color: #888;
             text-align: center;
-            padding: 35px;
-            font-size: 14px;
+            padding: 40px;
+            font-size: 13px;
+            border-top: 1px solid rgba(198,164,63,0.2);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .hero-content h1 { font-size: 55px; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
+            .menu-toggle { display: block; }
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 85px;
                 left: -100%;
-                background: white;
-                width: 100%;
+                background: rgba(255,255,255,0.98);
+                width: 80%;
                 flex-direction: column;
                 text-align: center;
-                padding: 30px 0;
+                padding: 50px 0;
                 transition: 0.4s;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                border-radius: 0 20px 20px 0;
             }
-            .nav-links.active {
-                left: 0;
-            }
-            .hero-content h1 {
-                font-size: 42px;
-            }
-            .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-            .top-left span {
-                display: block;
-                margin-bottom: 8px;
-            }
+            .nav-links.active { left: 0; }
+            .hero-content h1 { font-size: 38px; }
+            .hero-content h4 { letter-spacing: 4px; font-size: 14px; }
+            .section-title { font-size: 40px; }
+            .slider-slide { height: 350px; }
         }
     </style>
 </head>
@@ -392,15 +604,16 @@
 
 <div class="top-bar">
     <div class="container">
-        <div class="top-left">
+        <div class="contact-info">
             <span><i class="fas fa-phone-alt"></i> 0347-8679725</span>
             <span><i class="fas fa-envelope"></i> soniashahzadi.salon@gmail.com</span>
             <span><i class="fas fa-map-marker-alt"></i> 16 Number Gali, Aymun Town, Lahore</span>
         </div>
-        <div class="top-right">
+        <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 </div>
@@ -408,9 +621,10 @@
 <nav>
     <div class="container">
         <div class="logo">
-            <h1>Signature <span>Salon</span></h1>
+            <h1>Signature <span style="background: linear-gradient(135deg, #1a1a1a 0%, #c6a43f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Salon</span></h1>
+            <p>BY SONIA SHAHZADI</p>
         </div>
-        <div class="menu-icon" id="menuToggle">
+        <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links" id="navLinks">
@@ -424,42 +638,64 @@
 </nav>
 
 <section id="home" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h2>WELCOME TO</h2>
-            <h1>Signature Salon & Spa</h1>
-            <p>Quality • Hygiene • Comfort • Satisfaction</p>
-            <a href="#contact" class="btn-gold">Book Now</a>
-        </div>
+    <video class="hero-video" autoplay loop muted playsinline>
+        <source src="https://videos.pexels.com/video-files/3190520/3190520-uhd_2560_1440_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h4>WELCOME TO THE LUXURY</h4>
+        <h1>Signature Salon & Spa</h1>
+        <p>Quality • Hygiene • Comfort • Satisfaction</p>
+        <a href="#contact" class="btn-gold">Book Appointment →</a>
     </div>
 </section>
 
+<div class="floating-banner">
+    <div class="floating-text">
+        <span><i class="fas fa-cut"></i> Hair Cutting & Styling</span>
+        <span><i class="fas fa-palette"></i> Hair Color & Highlights</span>
+        <span><i class="fas fa-spa"></i> Hair Treatment & Spa</span>
+        <span><i class="fas fa-mask"></i> Party Makeup</span>
+        <span><i class="fas fa-smile"></i> Signature Makeup</span>
+        <span><i class="fas fa-leaf"></i> Medicated Facial</span>
+        <span><i class="fas fa-hand-holding-heart"></i> Full Body Massage</span>
+        <span><i class="fas fa-home"></i> Home Service Available</span>
+        <span><i class="fas fa-cut"></i> Hair Cutting & Styling</span>
+        <span><i class="fas fa-palette"></i> Hair Color & Highlights</span>
+    </div>
+</div>
+
 <section id="services" class="services">
     <div class="container">
-        <h2 class="section-title">Our <span>Services</span></h2>
-        <p class="section-sub">Experience the luxury of professional beauty care</p>
+        <h2 class="section-title" data-aos="fade-up">Our <span>Services</span></h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Experience the luxury of professional beauty care</p>
         <div class="services-grid">
-            <div class="service-item"><i class="fas fa-cut"></i><h3>Hair Cutting & Styling</h3><p>Trendy cuts & expert styling</p></div>
-            <div class="service-item"><i class="fas fa-palette"></i><h3>Hair Color & Highlights</h3><p>Premium color & perfect highlights</p></div>
-            <div class="service-item"><i class="fas fa-spa"></i><h3>Hair Treatment & Spa</h3><p>Deep conditioning & repair</p></div>
-            <div class="service-item"><i class="fas fa-mask"></i><h3>Party Makeup</h3><p>Flawless party & event looks</p></div>
-            <div class="service-item"><i class="fas fa-smile"></i><h3>Signature Makeup</h3><p>Bridal & exclusive makeup</p></div>
-            <div class="service-item"><i class="fas fa-leaf"></i><h3>Medicated Facial</h3><p>Glowing & clear skin</p></div>
-            <div class="service-item"><i class="fas fa-hand-holding-heart"></i><h3>Full Body Massage</h3><p>Relax & rejuvenate</p></div>
-            <div class="service-item"><i class="fas fa-home"></i><h3>Home Service Available</h3><p>We come to your doorstep</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="0"><i class="fas fa-cut"></i><h3>Hair Cutting & Styling</h3><p>Expert cuts & trendy styles</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-palette"></i><h3>Hair Color & Highlights</h3><p>Premium color solutions</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-spa"></i><h3>Hair Treatment & Spa</h3><p>Nourishing hair therapies</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-mask"></i><h3>Party Makeup</h3><p>Flawless party looks</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-smile"></i><h3>Signature Makeup</h3><p>Bridal & event makeup</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-leaf"></i><h3>Medicated Facial</h3><p>Glowing skin treatments</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600"><i class="fas fa-hand-holding-heart"></i><h3>Full Body Massage</h3><p>Relax & rejuvenate</p></div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="700"><i class="fas fa-home"></i><h3>Home Service</h3><p>We come to you</p></div>
         </div>
     </div>
 </section>
 
 <section id="gallery" class="gallery">
     <div class="container">
-        <h2 class="section-title">Our <span>Gallery</span></h2>
-        <p class="section-sub">A glimpse of our artistry</p>
-        <div class="gallery-grid">
-            <div class="gallery-img"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salon"></div>
-            <div class="gallery-img"><img src="https://images.pexels.com/photos/3997405/pexels-photo-3997405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hair"></div>
-            <div class="gallery-img"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Makeup"></div>
-            <div class="gallery-img"><img src="https://images.pexels.com/photos/3997405/pexels-photo-3997405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Spa"></div>
+        <h2 class="section-title" data-aos="fade-up">Our <span>Gallery</span></h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">A glimpse of our artistry</p>
+        <div class="gallery-slider" data-aos="fade-up" data-aos-delay="200">
+            <div class="slider-container" id="sliderContainer">
+                <div class="slider-slide"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Salon"><div class="slider-caption"><h3>Luxury Salon Interior</h3><p>Elegant & comfortable</p></div></div>
+                <div class="slider-slide"><img src="https://images.pexels.com/photos/3997405/pexels-photo-3997405.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Hair Styling"><div class="slider-caption"><h3>Expert Hair Styling</h3><p>Trendy cuts & colors</p></div></div>
+                <div class="slider-slide"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Makeup"><div class="slider-caption"><h3>Professional Makeup</h3><p>Bridal & party looks</p></div></div>
+                <div class="slider-slide"><img src="https://images.pexels.com/photos/3997405/pexels-photo-3997405.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Spa"><div class="slider-caption"><h3>Relaxing Spa</h3><p>Full body massage</p></div></div>
+            </div>
+            <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            <div class="dots" id="dots"></div>
         </div>
     </div>
 </section>
@@ -467,14 +703,14 @@
 <section id="about" class="about">
     <div class="container">
         <div class="about-grid">
-            <div class="about-text">
-                <h3>About <span style="color:#c6a43f;">Signature Salon</span></h3>
-                <p>Signature Salon & Spa, owned by <strong>Sonia Shahzadi</strong>, brings you the finest beauty services in Lahore. We believe in quality, hygiene, and complete customer satisfaction.</p>
-                <p>From hair styling to bridal makeup and therapeutic massages, our expert team uses top-tier products. Home service available across Lahore.</p>
-                <a href="#contact" class="btn-gold">Get in Touch</a>
+            <div class="about-text" data-aos="fade-right">
+                <h2>About <span style="color:#c6a43f;">Signature Salon</span></h2>
+                <p><strong>Sonia Shahzadi</strong> brings you a premium salon experience in Lahore. We specialize in hair, makeup, and spa treatments with international standards.</p>
+                <p>Our commitment to <strong>quality, hygiene, and comfort</strong> ensures every client leaves feeling beautiful and satisfied. Home service available across Lahore.</p>
+                <a href="#contact" class="btn-gold">Book Now →</a>
             </div>
-            <div class="about-img">
-                <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salon">
+            <div class="about-img" data-aos="fade-left">
+                <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Salon">
             </div>
         </div>
     </div>
@@ -482,22 +718,22 @@
 
 <section id="contact" class="contact">
     <div class="container">
-        <h2 class="section-title">Get In <span>Touch</span></h2>
-        <p class="section-sub">Book your appointment today</p>
+        <h2 class="section-title" data-aos="fade-up">Get In <span>Touch</span></h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Book your appointment today</p>
         <div class="contact-grid">
-            <div class="contact-card">
+            <div class="contact-info-card" data-aos="fade-right">
                 <h3>Contact Info</h3>
                 <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><p>16 Number Gali, Aymun Town, Lahore</p></div>
-                <div class="contact-detail"><i class="fas fa-phone-alt"></i><p>0347-8679725 (WhatsApp)</p></div>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i><p>0347-8679725 (Call & WhatsApp)</p></div>
                 <div class="contact-detail"><i class="fas fa-envelope"></i><p>soniashahzadi.salon@gmail.com</p></div>
-                <div class="contact-detail"><i class="fas fa-clock"></i><p>Mon-Sun: 11am - 9pm</p></div>
+                <div class="contact-detail"><i class="fas fa-clock"></i><p>Mon - Sun: 11:00 AM - 9:00 PM</p></div>
             </div>
-            <div class="contact-form">
-                <input type="text" placeholder="Your Name">
+            <div class="contact-form" data-aos="fade-left">
+                <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email Address">
                 <input type="tel" placeholder="Phone Number">
                 <textarea rows="5" placeholder="Your Message"></textarea>
-                <button class="btn-gold">Send Message</button>
+                <button class="btn-gold">Send Message →</button>
             </div>
         </div>
     </div>
@@ -507,19 +743,66 @@
     <p>© 2026 Signature Salon & Spa | Sonia Shahzadi | All Rights Reserved</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+
+    // Mobile Menu
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            navLinks.classList.remove('active');
-        });
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
+
+    // Gallery Slider
+    const sliderContainer = document.getElementById('sliderContainer');
+    const slides = document.querySelectorAll('.slider-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dots');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    setInterval(nextSlide, 5000);
 </script>
 </body>
 </html>
