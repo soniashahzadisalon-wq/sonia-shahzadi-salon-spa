@@ -1,136 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sonia Shahzadi Signature Salon & Spa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --gold:#d4af37;
+  --gold-soft:#e9cf7a;
+  --ink:#0a0a0a;
+  --panel:#131110;
+  --panel-2:#1a1715;
+  --rose:#c98a8a;
+  --line:rgba(212,175,55,0.25);
+}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Poppins;background:#0a0a0a;color:white;}
+body{font-family:'Poppins',sans-serif;background:var(--ink);color:#f3ede3;line-height:1.5;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+a{color:inherit;}
+img{display:block;}
 
 /* NAV */
 nav{
-position:fixed;width:100%;top:0;
-display:flex;justify-content:space-between;
-padding:20px 40px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
+position:fixed;width:100%;top:0;display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;background:rgba(10,10,10,0.75);backdrop-filter:blur(12px);
+z-index:1000;border-bottom:1px solid var(--line);
 }
-nav h2{color:#d4af37;font-family:Playfair Display;}
-nav a{color:white;margin-left:25px;text-decoration:none;font-size:14px;}
+nav h2{color:var(--gold);font-size:22px;letter-spacing:0.5px;}
+.nav-links{display:flex;align-items:center;gap:22px;}
+nav a.link{text-decoration:none;font-size:14px;color:#eee;opacity:0.9;}
+nav a.link:hover{color:var(--gold);}
+.cart-btn{
+position:relative;background:none;border:1px solid var(--gold);color:var(--gold);
+padding:9px 16px;border-radius:30px;font-size:14px;cursor:pointer;font-family:'Poppins';
+display:flex;align-items:center;gap:8px;
+}
+.cart-count{
+position:absolute;top:-8px;right:-8px;background:var(--gold);color:#0a0a0a;
+font-size:11px;font-weight:600;width:20px;height:20px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:24px;cursor:pointer;}
 
 /* HERO */
 .hero{height:100vh;position:relative;}
-.hero video{
-position:absolute;width:100%;height:100%;
-object-fit:cover;
-}
+.hero video{position:absolute;width:100%;height:100%;object-fit:cover;}
 .overlay{
-position:absolute;width:100%;height:100%;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9));
-display:flex;justify-content:center;align-items:center;text-align:center;
+position:absolute;width:100%;height:100%;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.92));
+display:flex;justify-content:center;align-items:center;text-align:center;padding:0 20px;
 }
-.overlay h1{
-font-size:65px;
-color:#d4af37;
-font-family:Playfair Display;
-}
-.overlay p{margin-top:15px;font-size:18px;}
+.overlay .eyebrow{color:var(--gold-soft);letter-spacing:4px;font-size:13px;text-transform:uppercase;margin-bottom:14px;display:block;}
+.overlay h1{font-size:clamp(34px,6vw,68px);color:var(--gold);line-height:1.15;}
+.overlay p{margin-top:16px;font-size:18px;color:#e8e0d0;}
+.hero-btns{margin-top:30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .btn{
-display:inline-block;margin-top:25px;
-padding:14px 35px;background:#d4af37;
-color:black;border-radius:30px;text-decoration:none;
+display:inline-block;padding:14px 32px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:500;
+transition:0.3s;cursor:pointer;border:none;font-family:'Poppins';
 }
+.btn-gold{background:var(--gold);color:#0a0a0a;}
+.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);}
+.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold);}
+.btn-outline:hover{background:rgba(212,175,55,0.1);}
 
 /* SECTION */
-section{padding:100px 20px;text-align:center;}
-h2{
-color:#d4af37;
-font-family:Playfair Display;
-margin-bottom:30px;
-}
+section{padding:90px 20px;max-width:1200px;margin:auto;}
+.sec-head{text-align:center;margin-bottom:50px;}
+.sec-head span.eyebrow{color:var(--gold-soft);letter-spacing:3px;font-size:12px;text-transform:uppercase;}
+.sec-head h2{color:var(--gold);font-size:clamp(28px,4vw,42px);margin-top:10px;}
+.sec-head p{color:#cbbfa8;margin-top:12px;font-size:15px;max-width:560px;margin-left:auto;margin-right:auto;}
 
 /* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
 .card{
-background:#111;
-padding:30px;
-border-radius:15px;
-transition:0.4s;
+background:var(--panel);padding:32px 26px;border-radius:14px;transition:0.35s;
+border:1px solid var(--line);text-align:left;
 }
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #d4af37;
+.card .num{color:var(--gold);font-size:13px;letter-spacing:2px;opacity:0.7;}
+.card h3{margin:14px 0 8px;font-size:19px;color:#f3ede3;}
+.card p{font-size:13.5px;color:#b8ac95;}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(212,175,55,0.15);border-color:var(--gold);}
+
+/* SHOP */
+.shop-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.filter-btn{
+background:transparent;border:1px solid var(--line);color:#e8e0d0;padding:8px 18px;
+border-radius:24px;font-size:13px;cursor:pointer;font-family:'Poppins';transition:0.25s;
 }
+.filter-btn.active,.filter-btn:hover{background:var(--gold);color:#0a0a0a;border-color:var(--gold);}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;}
+.product{
+background:var(--panel);border-radius:16px;overflow:hidden;border:1px solid var(--line);
+display:flex;flex-direction:column;transition:0.3s;
+}
+.product:hover{border-color:var(--gold);transform:translateY(-6px);}
+.product .p-img{height:190px;overflow:hidden;position:relative;background:#000;}
+.product .p-img img{width:100%;height:100%;object-fit:cover;}
+.p-tag{
+position:absolute;top:10px;left:10px;background:var(--gold);color:#0a0a0a;font-size:11px;
+padding:4px 10px;border-radius:20px;font-weight:600;
+}
+.p-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;}
+.p-body h4{font-size:15.5px;color:#f3ede3;margin-bottom:6px;}
+.p-body .p-desc{font-size:12.5px;color:#a99c85;margin-bottom:14px;flex:1;}
+.p-price-row{display:flex;justify-content:space-between;align-items:center;}
+.p-price{color:var(--gold);font-size:17px;font-weight:600;}
+.p-old{color:#7a7166;font-size:12.5px;text-decoration:line-through;margin-right:6px;}
+.add-btn{
+background:var(--gold);color:#0a0a0a;border:none;padding:9px 16px;border-radius:22px;
+font-size:13px;font-weight:600;cursor:pointer;font-family:'Poppins';transition:0.25s;
+}
+.add-btn:hover{background:var(--gold-soft);}
+.add-btn.added{background:#4caf50;color:white;}
 
 /* BEFORE AFTER */
-.ba{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-.ba img{
-width:100%;
-border-radius:15px;
-}
-
-/* DEALS */
-.deals{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-}
-.deals img{
-width:100%;
-border-radius:15px;
-transition:0.4s;
-}
-.deals img:hover{
-transform:scale(1.05);
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.ba figure{position:relative;border-radius:16px;overflow:hidden;}
+.ba img{width:100%;height:320px;object-fit:cover;}
+.ba figcaption{
+position:absolute;bottom:0;width:100%;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,0.85));
+font-size:13px;letter-spacing:1px;color:var(--gold-soft);text-transform:uppercase;
 }
 
 /* TESTIMONIAL */
-.testi{
-background:#111;
-padding:40px;
-border-radius:15px;
-max-width:700px;
-margin:auto;
-}
+.testi{background:var(--panel);padding:44px;border-radius:18px;max-width:680px;margin:auto;text-align:center;border:1px solid var(--line);}
+.testi p.quote{font-size:17px;color:#f0e9da;font-style:italic;}
+.testi b{color:var(--gold);display:block;margin-top:18px;font-style:normal;}
 
 /* CONTACT */
-.buttons a{
-display:inline-block;margin:10px;
-padding:14px 28px;border-radius:30px;
-text-decoration:none;
-}
-.call{background:#d4af37;color:black;}
+#contact{text-align:center;}
+#contact p{margin:6px 0;color:#d9cdb5;font-size:15px;}
+.buttons{margin-top:26px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.buttons a{display:inline-block;padding:14px 28px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:500;}
+.call{background:var(--gold);color:#0a0a0a;}
 .whatsapp{background:#25D366;color:white;}
-.map{background:#333;color:white;}
+.map{background:#2a2a2a;color:white;border:1px solid var(--line);}
 
 /* FLOAT */
-.float{
-position:fixed;right:20px;
-padding:15px;border-radius:50%;
-color:white;
-}
-.w{bottom:80px;background:#25D366;}
-.c{bottom:20px;background:#d4af37;color:black;}
+.float{position:fixed;right:20px;padding:15px;border-radius:50%;color:white;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.4);z-index:900;}
+.w{bottom:90px;background:#25D366;}
+.c{bottom:24px;background:var(--gold);color:black;}
 
-footer{text-align:center;padding:30px;background:black;}
+footer{text-align:center;padding:36px 20px;background:#000;border-top:1px solid var(--line);}
+footer p{font-size:12.5px;color:#8a7f6a;margin-top:6px;}
+
+/* CART DRAWER */
+.cart-overlay{
+position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1998;opacity:0;pointer-events:none;transition:0.3s;
+}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-drawer{
+position:fixed;top:0;right:-420px;width:400px;max-width:90vw;height:100%;background:var(--panel-2);
+z-index:1999;transition:0.35s;display:flex;flex-direction:column;border-left:1px solid var(--line);
+}
+.cart-drawer.open{right:0;}
+.cart-head{padding:22px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);}
+.cart-head h3{color:var(--gold);font-size:20px;}
+.close-btn{background:none;border:none;color:#eee;font-size:22px;cursor:pointer;}
+.cart-items{flex:1;overflow-y:auto;padding:16px 22px;}
+.cart-empty{text-align:center;color:#8a7f6a;padding:60px 10px;font-size:14px;}
+.c-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.c-item img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex-shrink:0;}
+.c-info{flex:1;}
+.c-info h5{font-size:14px;color:#f3ede3;margin-bottom:4px;}
+.c-info .c-price{color:var(--gold);font-size:13px;}
+.qty-row{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.qty-btn{
+background:#222;border:1px solid var(--line);color:var(--gold);width:24px;height:24px;border-radius:6px;
+cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;
+}
+.qty-val{font-size:13px;min-width:16px;text-align:center;}
+.remove-btn{background:none;border:none;color:#c96060;font-size:12px;cursor:pointer;margin-left:auto;}
+.cart-foot{padding:20px 22px;border-top:1px solid var(--line);}
+.cart-total-row{display:flex;justify-content:space-between;font-size:16px;color:#f3ede3;margin-bottom:16px;}
+.cart-total-row b{color:var(--gold);}
+.checkout-btn{width:100%;padding:14px;background:var(--gold);color:#0a0a0a;border:none;border-radius:30px;font-size:15px;font-weight:600;cursor:pointer;}
+.checkout-btn:disabled{opacity:0.4;cursor:not-allowed;}
+
+/* CHECKOUT MODAL */
+.modal-overlay{
+position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:2100;display:none;
+align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+background:var(--panel);border:1px solid var(--gold);border-radius:18px;max-width:440px;width:100%;
+padding:32px;max-height:90vh;overflow-y:auto;
+}
+.modal h3{color:var(--gold);font-size:22px;margin-bottom:6px;}
+.modal p.sub{color:#a99c85;font-size:13px;margin-bottom:22px;}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:12.5px;color:#d9cdb5;margin-bottom:6px;}
+.field input,.field textarea{
+width:100%;padding:11px 14px;background:#0a0a0a;border:1px solid var(--line);border-radius:10px;
+color:#f3ede3;font-family:'Poppins';font-size:14px;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);}
+.modal-total{
+display:flex;justify-content:space-between;padding:14px 0;margin:10px 0 20px;
+border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:#f3ede3;font-size:15px;
+}
+.modal-total b{color:var(--gold);}
+.modal-btns{display:flex;gap:10px;}
+.modal-btns button{flex:1;}
+.err-msg{color:#e07575;font-size:12.5px;margin-top:-8px;margin-bottom:12px;display:none;}
+
+/* ORDER CONFIRM */
+.confirm-box{text-align:center;padding:10px 0;}
+.confirm-box .tick{font-size:48px;margin-bottom:10px;}
+.order-no{
+background:#0a0a0a;border:1px dashed var(--gold);border-radius:12px;padding:14px;
+color:var(--gold);font-size:18px;font-weight:600;letter-spacing:1px;margin:16px 0;
+}
 
 @media(max-width:768px){
-.overlay h1{font-size:35px;}
+.overlay h1{font-size:32px;}
 .ba{grid-template-columns:1fr;}
+.nav-links{
+  position:fixed;top:64px;right:0;background:#0a0a0a;flex-direction:column;
+  width:220px;padding:20px;border:1px solid var(--line);border-radius:0 0 0 14px;
+  transform:translateX(100%);transition:0.3s;
+}
+.nav-links.open{transform:translateX(0);}
+.burger{display:block;}
+.cart-btn{order:2;}
 }
 </style>
 </head>
@@ -139,97 +235,389 @@ footer{text-align:center;padding:30px;background:black;}
 
 <nav>
 <h2>Sonia Shahzadi</h2>
-<div>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#deals">Deals</a>
-<a href="#contact">Contact</a>
+<div class="nav-links" id="navLinks">
+  <a class="link" href="#services">Services</a>
+  <a class="link" href="#shop">Shop</a>
+  <a class="link" href="#deals">Gallery</a>
+  <a class="link" href="#contact">Contact</a>
+  <button class="cart-btn" onclick="openCart()">🛍️ Cart<span class="cart-count" id="cartCount">0</span></button>
 </div>
+<button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<video autoplay muted loop>
+<video autoplay muted loop playsinline>
 <source src="https://cdn.coverr.co/videos/coverr-woman-getting-makeup-1584/1080p.mp4">
 </video>
-
 <div class="overlay">
 <div>
+<span class="eyebrow">Lahore's Signature Bridal Studio</span>
 <h1>Luxury Bridal Transformation 👰✨</h1>
-<p>Makeup • Hair • Skin • Spa • Home Service</p>
-<a href="#contact" class="btn">Book Now</a>
+<p>Makeup • Hair • Skin • Spa • Home Service — and now, our own Beauty Shop</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-gold">Book Appointment</a>
+<a href="#shop" class="btn btn-outline">Shop Cosmetics</a>
+</div>
 </div>
 </div>
 </div>
 
 <!-- SERVICES -->
 <section id="services">
+<div class="sec-head">
+<span class="eyebrow">What We Do</span>
 <h2>Our Premium Services</h2>
-<div class="services">
-<div class="card">HD Bridal Makeup</div>
-<div class="card">Hair Styling & Color</div>
-<div class="card">Skin Care & Facial</div>
-<div class="card">Wax & Threading</div>
-<div class="card">Full Body Massage</div>
-<div class="card">Home Service Available</div>
+<p>Har bride aur har client k liye personalized, professional aur luxurious beauty experience.</p>
 </div>
+<div class="services">
+<div class="card"><span class="num">01</span><h3>HD Bridal Makeup</h3><p>Airbrush & HD makeup jo camera aur function dono me perfect lage.</p></div>
+<div class="card"><span class="num">02</span><h3>Hair Styling & Color</h3><p>Trending hairstyles, keratin, aur global hair color specialists.</p></div>
+<div class="card"><span class="num">03</span><h3>Skin Care & Facial</h3><p>Glow facials, whitening & anti-aging treatments qualified staff se.</p></div>
+<div class="card"><span class="num">04</span><h3>Wax & Threading</h3><p>Painless waxing aur precise threading, fully hygienic environment.</p></div>
+<div class="card"><span class="num">05</span><h3>Full Body Massage</h3><p>Relaxing spa massages jo stress aur thakan dono door karein.</p></div>
+<div class="card"><span class="num">06</span><h3>Home Service Available</h3><p>Apni location par hi bridal aur party makeup ka experience payein.</p></div>
+</div>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+<div class="sec-head">
+<span class="eyebrow">Beauty Shop</span>
+<h2>Cosmetics & Ladies Products</h2>
+<p>Salon-grade cosmetics ab seedha aap tak — order karein aur home delivery payein.</p>
+</div>
+
+<div class="shop-filters" id="shopFilters">
+<button class="filter-btn active" data-cat="all">All Products</button>
+<button class="filter-btn" data-cat="makeup">Makeup</button>
+<button class="filter-btn" data-cat="skincare">Skincare</button>
+<button class="filter-btn" data-cat="hair">Hair Care</button>
+<button class="filter-btn" data-cat="fragrance">Fragrance</button>
+</div>
+
+<div class="products" id="productsGrid"></div>
 </section>
 
 <!-- BEFORE AFTER -->
-<section>
-<h2>Before & After</h2>
-<div class="ba">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<img src="https://images.unsplash.com/photo-1603570419986-9c9b3c7d0e6e">
-</div>
-</section>
-
-<!-- DEALS -->
 <section id="deals">
-<h2>Beauty Deals</h2>
-<div class="deals">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<img src="https://images.unsplash.com/photo-1603570419986-9c9b3c7d0e6e">
+<div class="sec-head">
+<span class="eyebrow">Real Results</span>
+<h2>Before & After</h2>
+</div>
+<div class="ba">
+<figure><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9"><figcaption>Bridal Look — Before</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348"><figcaption>Bridal Look — After</figcaption></figure>
 </div>
 </section>
 
 <!-- TESTIMONIAL -->
 <section>
-<h2>Client Experience</h2>
+<div class="sec-head">
+<span class="eyebrow">Client Love</span>
+<h2>What Our Clients Say</h2>
+</div>
 <div class="testi">
-Amazing bridal makeup service. I felt like a queen 👑  
-<br><br>
-<b>- Sonia Shahzadi Client</b>
+<p class="quote">"Amazing bridal makeup service. I felt like a queen 👑 — staff bohat professional aur friendly thi."</p>
+<b>— Sonia Shahzadi Client</b>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+<div class="sec-head">
+<span class="eyebrow">Get In Touch</span>
 <h2>Contact Us</h2>
-
+</div>
 <p>📍 Aymun Town, Lahore</p>
 <p>📞 0347-8679725</p>
 <p>📧 soniashahzadi.salon@gmail.com</p>
-
 <div class="buttons">
 <a href="tel:03478679725" class="call">Call Now</a>
 <a href="https://wa.me/923478679725" class="whatsapp">WhatsApp</a>
 <a href="https://maps.google.com/?q=31.598381,74.410217" class="map">Location</a>
 </div>
-
 </section>
 
-<!-- FLOAT -->
 <a href="https://wa.me/923478679725" class="float w">💬</a>
 <a href="tel:03478679725" class="float c">📞</a>
 
 <footer>
-<h2 style="color:#d4af37;">Sonia Shahzadi Salon & Spa</h2>
-<p>Luxury Bridal & Beauty Services</p>
+<h2 style="color:var(--gold);font-size:20px;">Sonia Shahzadi Salon & Spa</h2>
+<p>Luxury Bridal & Beauty Services + Cosmetics Shop</p>
 <p>© 2026 All Rights Reserved</p>
 </footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+<div class="cart-head">
+<h3>Your Cart</h3>
+<button class="close-btn" onclick="closeCart()">✕</button>
+</div>
+<div class="cart-items" id="cartItemsBox"></div>
+<div class="cart-foot">
+<div class="cart-total-row"><span>Total</span><b id="cartTotal">Rs. 0</b></div>
+<button class="checkout-btn" id="checkoutBtn" onclick="openCheckout()" disabled>Proceed to Checkout</button>
+</div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutOverlay">
+<div class="modal">
+<h3>Confirm Your Order</h3>
+<p class="sub">Order WhatsApp par bhejein aur hum aap se confirm karne k liye contact karenge.</p>
+<div class="field">
+<label>Full Name</label>
+<input id="custName" type="text" placeholder="e.g. Ayesha Khan">
+</div>
+<div class="field">
+<label>Phone Number</label>
+<input id="custPhone" type="text" placeholder="03XX-XXXXXXX">
+</div>
+<div class="field">
+<label>Delivery Address</label>
+<textarea id="custAddress" rows="3" placeholder="House #, Street, Area, City"></textarea>
+</div>
+<div class="err-msg" id="checkoutErr">Please fill name, phone aur address.</div>
+<div class="modal-total"><span>Total Amount</span><b id="modalTotal">Rs. 0</b></div>
+<div class="modal-btns">
+<button class="btn btn-outline" onclick="closeCheckout()" style="cursor:pointer;">Back</button>
+<button class="btn btn-gold" style="cursor:pointer;" onclick="placeOrder()">Send Order via WhatsApp</button>
+</div>
+</div>
+</div>
+
+<!-- ORDER CONFIRMATION MODAL -->
+<div class="modal-overlay" id="confirmOverlay">
+<div class="modal confirm-box">
+<div class="tick">✅</div>
+<h3>Order Placed!</h3>
+<p class="sub">Aapka order safely backup ho gaya hai. WhatsApp par bhi bhej diya gaya hai.</p>
+<div class="order-no" id="orderNoDisplay">#SS-0000</div>
+<button class="btn btn-gold" style="cursor:pointer;width:100%;" onclick="closeConfirm()">Done</button>
+</div>
+</div>
+
+<script>
+const SALON_WHATSAPP = "923478679725";
+
+const PRODUCTS = [
+{id:'p1',name:'HD Matte Foundation',cat:'makeup',price:2200,oldPrice:2800,img:'https://images.unsplash.com/photo-1631214540242-3cd8c4b0b3f8?w=400',desc:'Long-lasting HD coverage, all shades available.'},
+{id:'p2',name:'Velvet Matte Lipstick',cat:'makeup',price:950,img:'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400',desc:'Creamy matte finish, 12 shades.'},
+{id:'p3',name:'Eyeshadow Palette – 18 Shades',cat:'makeup',price:1800,oldPrice:2200,img:'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=400',desc:'Highly pigmented bridal & party shades.'},
+{id:'p4',name:'Waterproof Kajal & Liner',cat:'makeup',price:450,img:'https://images.unsplash.com/photo-1512207736890-6ffd23279cb1?w=400',desc:'Smudge-proof, 12hr wear.'},
+{id:'p5',name:'Brightening Vitamin C Serum',cat:'skincare',price:1600,img:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400',desc:'Glow boosting daily serum, 30ml.'},
+{id:'p6',name:'Whitening Facial Kit',cat:'skincare',price:2500,oldPrice:3000,img:'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400',desc:'Complete 5-step salon facial kit.'},
+{id:'p7',name:'Aloe Vera Soothing Gel',cat:'skincare',price:600,img:'https://images.unsplash.com/photo-1600428853876-fb5a850b444c?w=400',desc:'Calming daily moisturizer, 100ml.'},
+{id:'p8',name:'Rose Water Toner',cat:'skincare',price:400,img:'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400',desc:'Pure rose water toner, 200ml.'},
+{id:'p9',name:'Argan Hair Oil',cat:'hair',price:850,img:'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400',desc:'Nourishing oil for shine & strength, 100ml.'},
+{id:'p10',name:'Keratin Shampoo & Conditioner Set',cat:'hair',price:2100,oldPrice:2600,img:'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400',desc:'Salon-grade smoothing duo.'},
+{id:'p11',name:'Hair Growth Serum',cat:'hair',price:1350,img:'https://images.unsplash.com/photo-1591019479261-1a5a3b5d1c1a?w=400',desc:'Strengthens roots, reduces hair fall.'},
+{id:'p12',name:'Signature Bridal Perfume',cat:'fragrance',price:1900,img:'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400',desc:'Long-lasting floral bridal fragrance, 50ml.'},
+{id:'p13',name:'Luxury Body Mist',cat:'fragrance',price:750,img:'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400',desc:'Everyday fresh scent, 150ml.'}
+];
+
+let cart = {}; // {productId: qty}
+
+function renderProducts(filter='all'){
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = '';
+  PRODUCTS.filter(p => filter==='all' || p.cat===filter).forEach(p=>{
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.innerHTML = `
+      <div class="p-img">
+        ${p.oldPrice ? '<span class="p-tag">Sale</span>' : ''}
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="p-body">
+        <h4>${p.name}</h4>
+        <p class="p-desc">${p.desc}</p>
+        <div class="p-price-row">
+          <div>
+            ${p.oldPrice ? `<span class="p-old">Rs. ${p.oldPrice}</span>` : ''}
+            <span class="p-price">Rs. ${p.price}</span>
+          </div>
+          <button class="add-btn" data-id="${p.id}" onclick="addToCart('${p.id}', this)">Add to Cart</button>
+        </div>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+
+document.getElementById('shopFilters').addEventListener('click', e=>{
+  if(!e.target.classList.contains('filter-btn')) return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  renderProducts(e.target.dataset.cat);
+});
+
+function addToCart(id, btn){
+  cart[id] = (cart[id] || 0) + 1;
+  updateCartUI();
+  if(btn){
+    btn.textContent = 'Added ✓';
+    btn.classList.add('added');
+    setTimeout(()=>{ btn.textContent='Add to Cart'; btn.classList.remove('added'); }, 900);
+  }
+}
+
+function changeQty(id, delta){
+  if(!cart[id]) return;
+  cart[id] += delta;
+  if(cart[id] <= 0) delete cart[id];
+  updateCartUI();
+}
+
+function removeItem(id){
+  delete cart[id];
+  updateCartUI();
+}
+
+function cartTotal(){
+  return Object.entries(cart).reduce((sum,[id,qty])=>{
+    const p = PRODUCTS.find(x=>x.id===id);
+    return sum + (p ? p.price*qty : 0);
+  },0);
+}
+
+function cartCountTotal(){
+  return Object.values(cart).reduce((a,b)=>a+b,0);
+}
+
+function updateCartUI(){
+  const count = cartCountTotal();
+  document.getElementById('cartCount').textContent = count;
+  const box = document.getElementById('cartItemsBox');
+  const ids = Object.keys(cart);
+
+  if(ids.length === 0){
+    box.innerHTML = '<div class="cart-empty">Your cart is empty 🛍️<br>Shop se products add karein.</div>';
+    document.getElementById('checkoutBtn').disabled = true;
+  } else {
+    box.innerHTML = ids.map(id=>{
+      const p = PRODUCTS.find(x=>x.id===id);
+      const qty = cart[id];
+      return `
+      <div class="c-item">
+        <img src="${p.img}">
+        <div class="c-info">
+          <h5>${p.name}</h5>
+          <div class="c-price">Rs. ${p.price} x ${qty} = Rs. ${p.price*qty}</div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('${id}',-1)">-</button>
+            <span class="qty-val">${qty}</span>
+            <button class="qty-btn" onclick="changeQty('${id}',1)">+</button>
+            <button class="remove-btn" onclick="removeItem('${id}')">Remove</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    document.getElementById('checkoutBtn').disabled = false;
+  }
+  const total = cartTotal();
+  document.getElementById('cartTotal').textContent = 'Rs. ' + total;
+  document.getElementById('modalTotal').textContent = 'Rs. ' + total;
+}
+
+function openCart(){
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+function closeCart(){
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+function openCheckout(){
+  closeCart();
+  document.getElementById('checkoutOverlay').classList.add('open');
+}
+function closeCheckout(){
+  document.getElementById('checkoutOverlay').classList.remove('open');
+}
+function closeConfirm(){
+  document.getElementById('confirmOverlay').classList.remove('open');
+}
+
+// ---- Order number + backup via persistent storage ----
+async function getNextOrderNumber(){
+  try{
+    const result = await window.storage.get('order-counter', true);
+    let n = result ? parseInt(result.value, 10) : 0;
+    n = n + 1;
+    await window.storage.set('order-counter', String(n), true);
+    return n;
+  }catch(e){
+    // key doesn't exist yet
+    await window.storage.set('order-counter', '1', true);
+    return 1;
+  }
+}
+
+async function saveOrderBackup(order){
+  try{
+    await window.storage.set('order:' + order.orderNo, JSON.stringify(order), true);
+  }catch(e){
+    console.error('Order backup failed', e);
+  }
+}
+
+async function placeOrder(){
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const errBox = document.getElementById('checkoutErr');
+
+  if(!name || !phone || !address){
+    errBox.style.display = 'block';
+    return;
+  }
+  errBox.style.display = 'none';
+
+  const orderNumRaw = await getNextOrderNumber();
+  const orderNo = 'SS-' + String(orderNumRaw).padStart(4,'0');
+  const total = cartTotal();
+  const items = Object.entries(cart).map(([id,qty])=>{
+    const p = PRODUCTS.find(x=>x.id===id);
+    return {id, name:p.name, price:p.price, qty, subtotal:p.price*qty};
+  });
+
+  const order = {
+    orderNo, name, phone, address, items, total,
+    date: new Date().toISOString()
+  };
+
+  await saveOrderBackup(order);
+
+  // Build WhatsApp message
+  let msg = `*New Order — ${orderNo}*%0A`;
+  msg += `Sonia Shahzadi Salon & Spa%0A%0A`;
+  msg += `*Name:* ${name}%0A*Phone:* ${phone}%0A*Address:* ${address}%0A%0A`;
+  msg += `*Items:*%0A`;
+  items.forEach(it=>{
+    msg += `- ${it.name} x${it.qty} = Rs. ${it.subtotal}%0A`;
+  });
+  msg += `%0A*Total: Rs. ${total}*`;
+
+  const waUrl = `https://wa.me/${SALON_WHATSAPP}?text=${msg}`;
+  window.open(waUrl, '_blank');
+
+  document.getElementById('orderNoDisplay').textContent = '#' + orderNo;
+  closeCheckout();
+  document.getElementById('confirmOverlay').classList.add('open');
+
+  // reset cart
+  cart = {};
+  updateCartUI();
+  document.getElementById('custName').value='';
+  document.getElementById('custPhone').value='';
+  document.getElementById('custAddress').value='';
+}
+
+renderProducts();
+updateCartUI();
+</script>
 
 </body>
 </html>
